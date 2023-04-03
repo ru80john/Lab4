@@ -1,0 +1,28 @@
+#include <iostream>
+#include <queue>
+
+using namespace std;
+
+int main() {
+    int q, op, x;
+    priority_queue<int> mh;
+    cin >> q;
+    while (q--) {
+        cin >> op;
+        if (op == 1) {
+            cin >> x;
+            mh.push(-x);
+        }
+        else if (op == 2) {
+            if (!mh.empty())
+                mh.pop();
+        }
+        else {
+            if (!mh.empty())
+                cout << -mh.top() << "\n";
+            else
+                cout << "EMPTY" << "\n";
+        }
+    }
+    return 0;
+}
